@@ -60,6 +60,7 @@ irc_client = Irc_wrapper(HOST, PORT, NICK_NAME, CHANNEL_NAME, USER_NAME, HOST_NA
 while True:
 
     irc_client.read_data()
+    print irc_client.data
 
     if irc_client.find_in_data('PING'):
         irc_client.pong(irc_client.data.split()[1])
@@ -79,14 +80,10 @@ while True:
 
             try:
                 solution = str(eval(function))
-                message = destination + " :" + nick + ": " + solution
-                irc_client.private_message(message)
-
             except:
                 solution = "Wrong Input. Check Again!"
-                message = destination + " :" + nick + ": " + solution
 
-                irc_client.private_message(message)
-                pass
+            message = destination + " :" + nick + ": " + solution
+            irc_client.private_message(message)
 
 irc_client.irc.close()
