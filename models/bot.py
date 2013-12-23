@@ -6,7 +6,7 @@ from models.logger import Logger
 import settings.irc as settings
 
 class Bot(irc.IRCClient):
-    nickname = settings.NICK
+    nickname = settings.IRC_NICK
 
     def connectionMade(self):
         irc.IRCClient.connectionMade(self)

@@ -1,2 +1,3 @@
+JIRA_SERVER = ''
 JIRA_USER = ''
 JIRA_PASSWORD = ''
