@@ -6,7 +6,7 @@ class CommandFactory(object):
     @staticmethod
     def get_command(name):
         objects = {
-            'jira': JiraCommand,
+           'jira': JiraCommand,
             #'jenkins': JenkinsCommand,
             #'vote': VoteCommand,
         }

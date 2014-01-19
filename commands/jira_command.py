@@ -12,12 +12,12 @@ class JiraCommand(CommandAbstract):
     def __init__(self):
         self.jira = JIRA(options, basic_auth)
 
-    def help(self):
-        return {
-            'task JRA-11': 'title of task',
-            'task JRA-12 full': 'detailed information about task',
-            'jql summary ~ text and assignee = b.godunov@mail.ru': 'JQL search'
-        }
+    def help_list(self):
+        return [
+            ('task JRA-11', 'title of task'),
+            ('task JRA-12 full', 'detailed information about task'),
+            ('jql summary ~ text and assignee = b.godunov@mail.ru', 'JQL search')
+        ]
 
     def process_command(self, command):
         mapper = [
